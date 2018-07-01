@@ -69,3 +69,21 @@ Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework 
 ## Copyright and License
 
 Copyright 2013-2018 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-creative/blob/gh-pages/LICENSE) license.
+
+## GitHub Icon - Logo
+
+Source: [GitHub Logos and Usage](https://github.com/logos)
+Legal Terms: [Oficial legal terms ](https://github.com/logos#legal_verbiage)
+I'm using the Mark buttons to link my GitHub account
+
+
+## InfoJobs Icon - Logo
+
+Source: [InfoJobs Brand Book](http://brand.infojobs.net/)
+I'm using the InfoJobs logo to link my curriculum
+
+## LinkedIn Icon - Logo
+
+Source: [LinledIn Brand Resources](https://brand.linkedin.com/visual-identity/logo)
+I'm using the LinkedIn logo to link my curriculum
+
