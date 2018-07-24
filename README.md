@@ -87,3 +87,5 @@ I'm using the InfoJobs logo to link my curriculum
 Source: [LinledIn Brand Resources](https://brand.linkedin.com/visual-identity/logo)
 I'm using the LinkedIn logo to link my curriculum
 
+## NOTES
+24th July i use the new packages json files, updated for the dependencies, from the original repo [startbootstrap-creative](https://github.com/BlackrockDigital/startbootstrap-creative)
