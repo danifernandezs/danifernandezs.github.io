@@ -1,156 +1,293 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="es" data-lang="es">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daniel Fernández Santos — Arquitecto y administrador de OpenShift</title>
+  <meta name="description" content="Arquitecto y administrador de plataformas OpenShift/Kubernetes. Day-2, automatización, resiliencia, seguridad y compliance." />
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Daniel Fernandez Santos - GitHub Personal Page">
-  <meta name="author" content="Daniel Fernandez Santos">
+  <!-- Open Graph (preview al compartir) -->
+  <meta property="og:title" content="Daniel Fernández Santos — Arquitecto y administrador de OpenShift" />
+  <meta property="og:description" content="Plataformas OpenShift/Kubernetes listas para producción… y auditorías. Day-2, automatización, resiliencia y compliance." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.danifernandezs.com/" />
+  <!-- Opcional: añade una imagen 1200x630 en /assets/og-cover.png -->
+  <meta property="og:image" content="https://www.danifernandezs.com/assets/og-cover.png" />
 
-  <!-- My name - Title of WebSite -->
-  <title>Daniel Fern&aacute;ndez Santos</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #0f172a;
+      --muted: #475569;
+      --border: #e2e8f0;
+      --link: #2563eb;
+      --max: 920px;
+      --radius: 14px;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
-  <!-- Font Awesome Icons -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+      /* fondo sutil */
+      --bgGlow1: rgba(37, 99, 235, .10); /* azul */
+      --bgGlow2: rgba(125, 211, 252, .10); /* cyan */
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+      --pillHoverBg: rgba(37, 99, 235, .10);
+      --pillHoverBorder: rgba(37, 99, 235, .35);
 
-  <!-- Plugin CSS -->
-  <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+    }
 
-  <!-- Theme CSS - Includes Bootstrap -->
-  <link href="css/creative.min.css" rel="stylesheet">
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b1220;
+        --fg: #e5e7eb;
+        --muted: #a1a1aa;
+        --border: rgba(255,255,255,.12);
+        --link: #7dd3fc;
 
+        /* fondo sutil (dark) */
+        --bgGlow1: rgba(125, 211, 252, .14);
+        --bgGlow2: rgba(167, 139, 250, .12);
+
+    --pillHoverBg: rgba(125, 211, 252, .10);
+    --pillHoverBorder: rgba(125, 211, 252, .35);
+
+      }
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      background:
+        radial-gradient(900px 420px at 18% -10%, var(--bgGlow1), transparent 60%),
+        radial-gradient(900px 420px at 85% 10%, var(--bgGlow2), transparent 55%),
+        var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 44px 18px 64px;
+    }
+
+    /* i18n */
+    .lang { display: none; }
+    html[data-lang="es"] .lang-es { display: inline; }
+    html[data-lang="en"] .lang-en { display: inline; }
+    html[data-lang="es"] .lang-es-block { display: block; }
+    html[data-lang="en"] .lang-en-block { display: block; }
+
+    /* Layout */
+    .hero {
+      text-align: center;
+      padding: 26px 10px 22px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(28px, 4vw, 42px);
+      letter-spacing: -0.02em;
+    }
+
+    .headline {
+      margin: 0 auto;
+      max-width: 72ch;
+      color: var(--muted);
+      font-size: 15.5px;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      margin-top: 18px;
+      background: rgba(255,255,255,.55);
+    }
+    @media (prefers-color-scheme: dark) {
+      .card { background: rgba(255,255,255,.04); }
+    }
+
+    .section-title {
+      margin: 0 0 10px;
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pill {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      white-space: nowrap;
+      background: rgba(255,255,255,.35);
+    transition: background .14s ease, border-color .14s ease, color .14s ease, transform .14s ease;
+    }
+    @media (prefers-color-scheme: dark) {
+      .pill { background: rgba(255,255,255,.03); }
+    }
+
+    .pill:hover{
+      background: var(--pillHoverBg);
+      border-color: var(--pillHoverBorder);
+      color: var(--fg);
+      transform: translateY(-1px);
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    .links a {
+      font-weight: 650;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+    }
+
+    .muted { color: var(--muted); }
+
+    footer {
+      margin-top: 22px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+  </style>
 </head>
 
-<body id="page-top">
-  <!-- Navigation -->
-  <!-- Menu -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Daniel Fern&aacute;ndez Santos</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto my-2 my-lg-0">
-  <!-- About Menu Option -->
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About Me</a>
-          </li>
-  <!-- Portfolio GitHub Repos Menu Button -->
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="https://github.com/danifernandezs?tab=repositories" target="_blank">GitHub Repos</a>
-          </li>
-  <!-- Contact Menu Button -->
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-          </li>
+<body>
+  <main class="wrap">
+    <!-- 1) Apartado central: nombre + resumen -->
+    <section class="hero">
+      <h1>Daniel Fernández Santos</h1>
+      <p class="headline">
+        <span class="lang lang-es">
+          <strong>Construyo y opero plataformas OpenShift y Kubernetes</strong> que aguantan producción... y auditorías.<br/>
+          <u>Mi regla:</u> que la plataforma sea <strong>predecible</strong> y <strong>resiliente</strong>.
+        </span>
+        <span class="lang lang-en">
+          <strong>I build and operate OpenShift and Kubernetes platforms</strong> that stand up to production... and audits.<br/>
+          <u>My rule:</u> keep the platform <strong>predictable</strong> and <strong>resilient</strong>.
+        </span>
+      </p>
+    </section>
+
+    <!-- 2) Stack + links -->
+    <section class="card" aria-label="Stack and links">
+      <p class="section-title">
+        <span class="lang lang-es">Stack y enlaces</span>
+        <span class="lang lang-en">Stack & Links</span>
+      </p>
+
+      <div class="row" style="margin-bottom: 12px;">
+        <span class="pill">OpenShift</span>
+        <span class="pill">Kubernetes</span>
+        <span class="pill">GitOps / Argo CD</span>
+        <span class="pill">Hybrid Cloud</span>
+        <span class="pill">CI/CD</span>
+        <span class="pill">Ansible</span>
+      </div>
+
+      <div class="row links">
+        <a href="https://www.linkedin.com/in/danifernandezs/" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="muted">·</span>
+        <a href="https://github.com/danifernandezs" target="_blank" rel="noopener">GitHub</a>
+        <span class="muted">·</span>
+        <a href="https://www.enmicontenedorfunciona.com/" target="_blank" rel="noopener">En Mi Contenedor Funciona (Blog)</a>
+      </div>
+    </section>
+
+    <!-- 3) Sobre mí + aporte de valor -->
+    <section class="grid">
+      <section class="card" aria-label="About">
+        <p class="section-title">
+          <span class="lang lang-es">Sobre mí</span>
+          <span class="lang lang-en">About</span>
+        </p>
+
+        <p style="margin: 0;" class="lang lang-es-block">
+          Soy arquitecto y administrador de plataformas de orquestación de contenedores especializado en OpenShift,
+          con foco en diseño, automatización y las operaciones de día 2: upgrades, hardening y troubleshooting.
+          <br/><br/>
+          Me gusta que las operaciones sean repetibles, predecibles, con estándares claros, y habilitar “golden paths”
+          que faciliten el trabajo a todos los equipos.
+        </p>
+
+        <p style="margin: 0;" class="lang lang-en-block">
+          I'm a container platform architect and administrator specialized in OpenShift, focused on design, automation,
+          and day-2 operations: upgrades, hardening, and troubleshooting.
+          <br/><br/>
+          I like operations to be repeatable and predictable,
+          with clear standards, and to enable “golden paths” that make every team's work easier.
+        </p>
+      </section>
+
+      <section class="card" aria-label="Where I add value">
+        <p class="section-title">
+          <span class="lang lang-es">Dónde suelo aportar valor</span>
+          <span class="lang lang-en">Where I add value</span>
+        </p>
+
+        <ul class="lang lang-es-block">
+          <li><strong>Platform Engineering / SRE:</strong> fiabilidad, escalabilidad, repetibilidad y entornos alineados.</li>
+          <li><strong>Automatización:</strong> GitOps, pipelines y plantillas reutilizables.</li>
+          <li><strong>OpenShift “en serio”:</strong> arquitectura, red, almacenamiento y resiliencia.</li>
+          <li><strong>Seguridad &amp; compliance:</strong> enfoque práctico, orientado a operar sin fricción.</li>
         </ul>
-      </div>
-    </div>
-  </nav>
 
-  <!-- Header Section -->
-  <header class="masthead">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center justify-content-center text-center">
-        <div class="col-lg-10 align-self-end">
-          <h1 class="text-uppercase text-white font-weight-bold">Daniel Fern&aacute;ndez Santos</h1>
-          <hr class="divider my-4">
-        </div>
-        <div class="col-lg-8 align-self-baseline">
-          <p class="text-white-75 font-weight-light mb-5">Civil Engineer Degree
-		      <br>Road Safety and Mobility Master's Degree</br>
-		      <br>And yes, I use GitHub
-  <!-- Contact Buttons on the CV Area -->
-          <hr class="divider my-4">
-  <!-- GitHub Button and Link -->
-		<br>
-		<a href="https://github.com/danifernandezs" target="_blank">
-		<img class="img-fluid" src="img/logo-icon/GitHub/GitHub-Mark-64px.png" alt="" height="32" width="32" >
-		</a>
-  <!-- LinkedIn Button and Link -->
-		<a href="https://es.linkedin.com/in/daniel-fern%C3%A1ndez-santos-812a33157" target="_blank">
-		<img class="img-fluid" src="img/logo-icon/LinkedIn/In-Black-66px-R.png" alt="" height="34" width="34">
-		</a>
-  <!-- InfoJobs Button and Link -->
-		<a href="https://www.infojobs.net/daniel-fernandez-santos-2.prf" target="_blank">
-		<img class="img-fluid" src="img/logo-icon/InfoJobs/InfoJobs-Black.png" alt="" height="32" width="32">
-		</a>
-		</br>
-      </div>
-      </div>
-    </div>
-  </header>
+        <ul class="lang lang-en-block">
+          <li><strong>Platform Engineering / SRE:</strong> reliability, scalability, repeatability, and aligned environments.</li>
+          <li><strong>Automation:</strong> GitOps, pipelines, and reusable templates.</li>
+          <li><strong>OpenShift “for real”:</strong> architecture, networking, storage, and resilience.</li>
+          <li><strong>Security &amp; compliance:</strong> a practical approach, designed to operate without friction.</li>
+        </ul>
+      </section>
+    </section>
 
-  <!-- About Section -->
-  <section class="page-section bg-primary" id="about">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-  <!-- Title -->
-          <h2 class="text-white mt-0">About Me</h2>
-          <hr class="divider light my-4">
-  <!-- Text -->
-          <p class="text-white-50 mb-4">I'm Daniel Fern&aacute;ndez Santos, Civil Engineer Degree and Road Safety and Mobility Master's Degree.</p>
-          <hr class="divider light my-4">
-	  <p class="text-white-50 mb-4">Interested in the mix of "classic" engineering works and innovation with software and hardware based in Open Source and Open Hardware. 
-      <br> In love with high availability and automation of processes.
-      <br>I have and know how to use FDM 3D Printers.</p>
-	  <hr class="divider light my-4">
-    <p class="text-white-50 mb-4">Actually working with container and orchestrators (kubernetes and OpenShift).</p>
-    <hr class="divider light my-4">
-        </div>
-      </div>
-    </div>
-  </section>
+    <footer>
+      © <span id="y"></span> Daniel Fernández Santos
+    </footer>
+  </main>
 
-  <!-- Contact Section -->
-  <section class="page-section" id="contact">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h2 class="mt-0">Contact</h2>
-          <hr class="divider my-4">
-  <!-- One Line Text for the Contact Area -->
-          <p class="text-muted mb-5">Here you have my GitHub Profile Link, InfoJobs and LinkedIn links to my Curriculum</p>
-  <!-- Contact Buttons at Contact Section -->
-		<a href="https://github.com/danifernandezs" target="_blank">
-		<img class="img-fluid" src="img/logo-icon/GitHub/GitHub-Mark-64px.png" alt="" height="64" width="64" >
-		</a>
-		<a href="https://es.linkedin.com/in/daniel-fern%C3%A1ndez-santos-812a33157" target="_blank">
-		<img class="img-fluid" src="img/logo-icon/LinkedIn/In-Black-66px-R.png" alt="" height="66" width="66">
-		</a>
-		<a href="https://www.infojobs.net/daniel-fernandez-santos-2.prf" target="_blank">
-		<img class="img-fluid" src="img/logo-icon/InfoJobs/InfoJobs-Black.png" alt="" height="64" width="64">
-		</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <script>
+    (function () {
+      // Language switch: Spanish if browser is Spanish, otherwise English
+      var navLang = (navigator.languages && navigator.languages.length)
+        ? navigator.languages[0]
+        : (navigator.language || navigator.userLanguage || 'en');
 
-  <!-- Footer -->
-  <footer class="bg-light py-5">
-    <div class="container">
-      <div class="small text-center text-muted">Last update: 2020-01-30</div>
-    </div>
-  </footer>
+      var lang = String(navLang).toLowerCase().startsWith('es') ? 'es' : 'en';
+      document.documentElement.setAttribute('data-lang', lang);
+      document.documentElement.setAttribute('lang', lang);
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="js/creative.min.js"></script>
-
+      // Year
+      document.getElementById('y').textContent = new Date().getFullYear();
+    })();
+  </script>
 </body>
-
 </html>
