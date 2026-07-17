@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es" data-lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
+  <title>404 — Page not found | Daniel Fernández Santos</title>
+  <meta name="robots" content="noindex,nofollow" />
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #0f172a;
+      --muted: #475569;
+      --border: #e2e8f0;
+      --link: #7c3aed;
+      --max: 920px;
+      --radius: 14px;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      --bgGlow1: rgba(139, 92, 246, .20);
+      --bgGlow2: rgba(192, 132, 252, .20);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b1220;
+        --fg: #e5e7eb;
+        --muted: #a1a1aa;
+        --border: rgba(255,255,255,.12);
+        --link: #a78bfa;
+        --bgGlow1: rgba(167, 139, 250, .25);
+        --bgGlow2: rgba(139, 92, 246, .20);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      background:
+        radial-gradient(900px 420px at 18% -10%, var(--bgGlow1), transparent 60%),
+        radial-gradient(900px 420px at 85% 10%, var(--bgGlow2), transparent 55%),
+        var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 44px 18px 64px;
+    }
+
+    /* i18n */
+    .lang { display: none; }
+    html[data-lang="es"] .lang-es { display: inline; }
+    html[data-lang="en"] .lang-en { display: inline; }
+
+    .hero {
+      text-align: center;
+      padding: 80px 10px 22px;
+    }
+
+    .code {
+      font-size: clamp(64px, 12vw, 120px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin: 0 0 10px;
+      color: var(--link);
+      line-height: 1;
+    }
+
+    .headline {
+      margin: 0 auto 28px;
+      max-width: 52ch;
+      color: var(--muted);
+      font-size: 15.5px;
+    }
+
+    .btn {
+      display: inline-block;
+      border: 1px solid var(--link);
+      border-radius: 999px;
+      padding: 12px 28px;
+      font-family: var(--sans);
+      font-size: 15px;
+      font-weight: 650;
+      color: var(--link);
+      text-decoration: none;
+      transition: background .14s ease, color .14s ease, transform .14s ease;
+    }
+    .btn:hover {
+      background: var(--link);
+      color: var(--bg);
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <p class="code">404</p>
+      <p class="headline">
+        <span class="lang lang-es">
+          La página que buscas no existe o ha sido movida.
+        </span>
+        <span class="lang lang-en">
+          The page you're looking for doesn't exist or has been moved.
+        </span>
+      </p>
+      <a class="btn" href="/">
+        <span class="lang lang-es">Volver al inicio</span>
+        <span class="lang lang-en">Back to home</span>
+      </a>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Daniel Fernández Santos
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      var navLang = (navigator.languages && navigator.languages.length)
+        ? navigator.languages[0]
+        : (navigator.language || navigator.userLanguage || 'en');
+      var lang = String(navLang).toLowerCase().startsWith('es') ? 'es' : 'en';
+      document.documentElement.setAttribute('data-lang', lang);
+      document.documentElement.setAttribute('lang', lang);
+      document.getElementById('y').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
